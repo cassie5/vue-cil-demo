@@ -19,7 +19,7 @@
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <img src="../../assets/menu2.png" alt srcset>
+          <img src="../../assets/menu2.png">
 
           <div class="mui-media-body">图片分享</div>
         </a>
@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     getbanner() {
-      console.log(this);
+      // console.log(this);
       this.$http.get("http://www.lovegf.cn:8899/api/getlunbo").then(result => {
         this.banners = result.body.message;
       });
