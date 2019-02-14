@@ -1,15 +1,5 @@
 <template>
-    <div>
-       44444444444444444444444 
-    </div>
+  <div class="shopcar-container">
+    <h1>shopcarContainer</h1>
+  </div>
 </template>
-
-<script>
-export default {
-    
-}
-</script>
-
-<style lang="less">
-    
-</style>

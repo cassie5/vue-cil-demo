@@ -1,15 +1,5 @@
 <template>
-    <div>
-        33333333333333333333333333333333333333333333
-    </div>
+  <div class="search-container">
+    <h1>searchContainer</h1>
+  </div>
 </template>
-
-<script>
-export default {
-    
-}
-</script>
-
-<style lang="less">
-    
-</style>

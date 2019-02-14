@@ -9,42 +9,41 @@
       </mt-swipe-item>
     </mt-swipe>
 
-    <!-- 六宫格 -->
+    <!-- 九宫格 -->
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
-          <img src="../../assets/menu1.png" alt srcset>
+        <router-link to="/home/newsList">
+          <img src="@/assets/menu1.png" alt="">
           <div class="mui-media-body">新闻资讯</div>
-        </a>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <img src="../../assets/menu2.png">
-
+          <img src="@/assets/menu2.png" alt="">
           <div class="mui-media-body">图片分享</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <img src="../../assets/menu3.png" alt srcset>
+          <img src="@/assets/menu3.png" alt="">
           <div class="mui-media-body">商品购买</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <img src="../../assets/menu4.png" alt srcset>
+          <img src="@/assets/menu4.png" alt="">
           <div class="mui-media-body">留言反馈</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <img src="../../assets/menu5.png" alt srcset>
+          <img src="@/assets/menu5.png" alt="">
           <div class="mui-media-body">视频专区</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <img src="../../assets/menu6.png" alt srcset>
+          <img src="@/assets/menu6.png" alt="">
           <div class="mui-media-body">联系我们</div>
         </a>
       </li>
@@ -60,12 +59,11 @@ export default {
     };
   },
   created() {
-    this.getbanner();
+    this.getBanner();
   },
   methods: {
-    getbanner() {
-      // console.log(this);
-      this.$http.get("http://www.lovegf.cn:8899/api/getlunbo").then(result => {
+    getBanner() {
+      this.$http.get("getlunbo").then(result => {
         this.banners = result.body.message;
       });
     }
@@ -77,22 +75,24 @@ export default {
 .home-container {
   .mint-swipe {
     height: 200px;
-    img {
-      width: 100%;
-      height: 100%;
+    .mint-swipe-item {
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
-  .mui-table-view{
-      img {
-          width: 80%;
-      }
-    .mui-table-view-cell{
-        border: none
+  .mui-table-view {
+    background-color: #fff;
+    img {
+      width: 80%;
     }
-    .mui-media-body{
-        font-size: 14px !important;
+    .mui-table-view-cell {
+      border: none;
     }
-      background-color: #fff;
+    .mui-media-body {
+      font-size: 13px !important;
+    }
   }
 }
 </style>
