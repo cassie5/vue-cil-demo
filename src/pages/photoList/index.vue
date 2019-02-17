@@ -23,14 +23,18 @@
 
 <script>
 import mui from "@/libs/mui/js/mui.min.js";
-mui('.mui-scroll-wrapper').scroll({
-	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-});
-export default {
-  
 
+export default {
+  meunted() {
+    mui(".mui-scroll-wrapper").scroll({
+      deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+    });
+  }
 };
 </script>
 
 <style lang="less" scoped>
+.mui-scroll {
+  touch-action: none;
+}
 </style>
