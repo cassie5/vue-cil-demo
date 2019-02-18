@@ -2,9 +2,9 @@
   <div id="app">
     <mt-header fixed title="黑马程序员"></mt-header>
     <transition>
-    <router-view/>
+      <router-view/>
     </transition>
-    
+
     <nav class="mui-bar mui-bar-tab">
       <router-link class="mui-tab-item" to="/home">
         <span class="mui-icon mui-icon-home"></span>
@@ -30,28 +30,32 @@
 </template>
 
 <script>
-  export default {
-    name: "App"
-  };
+export default {
+  name: "App"
+};
 </script>
 <style lang="less">
-#app{
+#app {
+  touch-action: pan-x;
   padding-top: 40px;
   padding-bottom: 50px;
   overflow: hidden;
+  .mint-header {
+    z-index: 99;
+  }
 }
 
-.v-enter{
+.v-enter {
   opacity: 0;
   transform: translateX(100%);
 }
-.v-leaver-to{
+.v-leaver-to {
   opacity: 0;
   transform: translateX(-100%);
 }
 
 .v-enter-active,
-.v-leaver-active{
+.v-leaver-active {
   transition: all 0.5s ease;
 }
 </style>
