@@ -11,7 +11,7 @@
             :class="['mui-control-item',{'mui-active' : item.id ==0 }]"
             v-for="item in categories"
             :key="item.id"
-            @click="getPhotoList(item.id)"
+            @tap="getPhotoList(item.id)"
           >{{item.title}}</a>
         </div>
       </div>
@@ -19,7 +19,7 @@
 
     <!-- 图片列表区域 -->
     <ul class="photo-list">
-      <router-link v-for="item in photoList" :key="item.id"
+      <router-link v-for="(item , index) in photoList" :key="index"
       :to="'/home/photoInfo/'+item.id" tag="li">
         <img v-lazy="item.img_url">
         <div class="info">
@@ -39,7 +39,7 @@ export default {
     this.getCategories();
     this.getPhotoList(0);
   },
-  meunted() {
+  mounted() {
     mui(".mui-scroll-wrapper").scroll({
       deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
     });
@@ -70,7 +70,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+*{
+  touch-action: pan-y;
+}
 .photo-list {
   padding: 10px;
   padding-bottom: 0;

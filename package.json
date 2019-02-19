@@ -5,7 +5,7 @@
   "author": "TianchengLee <ltc6634284@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --open --port 3000 --hot --inline --progress --config --host 172.23.232.1 build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
